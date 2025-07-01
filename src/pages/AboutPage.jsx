@@ -1,36 +1,37 @@
 import Header from "../components/Header/Header";
-
-const About = () => {
-  return (
-    <div className="page-content">
-      <div className="info-card">
-        <h2>About Us</h2>
-        <p>Welcome to Vivekanand College, a leading institution dedicated to fostering academic excellence and holistic development. Since our inception in [Year of Establishment], we have been committed to providing a nurturing environment where students can thrive intellectually, personally, and professionally.</p>
-        <p>Our mission is to empower students with knowledge, critical thinking skills, and a strong sense of social responsibility. We aim to produce graduates who are not only successful in their careers but also contributing members of society.</p>
-      </div>
-
-      <div className="info-card">
-        <h3>Our Vision</h3>
-        <p>To be a beacon of learning, inspiring future generations to achieve their full potential and contribute positively to a dynamic global society.</p>
-      </div>
-
-      <div className="info-card">
-        <h3>Our Mission</h3>
-        <p>To provide high-quality education, foster research and innovation, promote ethical values, and encourage community engagement, thereby nurturing well-rounded individuals ready for global challenges.</p>
-      </div>
-
-      <div className="info-card">
-        <h3>Our Values</h3>
-        <ul>
-          <li><strong>Excellence:</strong> Striving for the highest standards in education and research.</li>
-          <li><strong>Integrity:</strong> Upholding honesty and ethical conduct in all endeavors.</li>
-          <li><strong>Innovation:</strong> Embracing new ideas and creative approaches to learning.</li>
-          <li><strong>Inclusivity:</strong> Creating a diverse and welcoming environment for all.</li>
-          <li><strong>Community:</strong> Fostering a sense of belonging and social responsibility.</li>
-        </ul>
-      </div>
+import '../styles/Pages.css'
+import { Link } from "react-router-dom";
+const AboutPage = () => {
+    return(
+        <div>
+             <Header/><br />
+        <div className="page-container" style={{ overflow: "auto" }}>
+           <h1 className="animate-fade-in-up">About Vivekanand College</h1>
+      <p>
+        Vivekanand College stands as a beacon of knowledge and integrity, committed to delivering transformative education since its inception in [Year of Establishment, e.g., 1980]. Located in the bustling heart of [City/Area, e.g., Chembur, Mumbai], our college has consistently strived to uphold the highest standards of academic rigor and ethical values.
+      </p>
+      <p>
+        Our vision is to empower students with critical thinking skills, a global perspective, and a strong sense of social responsibility. We aim to nurture individuals who are not only successful in their careers but also contributing members of society.
+      </p>
+      <h2>Our Mission</h2>
+      <ul>
+        <li>To provide high-quality, accessible education across various disciplines.</li>
+        <li>To foster research, innovation, and creativity among students and faculty.</li>
+        <li>To cultivate a diverse and inclusive learning environment.</li>
+        <li>To instill strong ethical values and leadership qualities.</li>
+      </ul>
+      <h2>Our Values</h2>
+      <p>
+        Integrity, Excellence, Innovation, Community, and Respect are the pillars upon which Vivekanand College is built. We encourage open dialogue, intellectual curiosity, and a relentless pursuit of knowledge.
+      </p>
+      <h2>Our History</h2>
+      <p>
+        [Briefly describe the college's history - e.g., how it started, key milestones, growth over the years, famous alumni if any]. Our journey began with a vision to make quality education available to all, and we continue that legacy today.
+      </p>
+      <Link to="/contact" className="btn">Inquire About Courses</Link>
+    </div>
     </div>
   );
-};
+}
 
-export default About;
+export default AboutPage;

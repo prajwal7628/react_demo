@@ -1,85 +1,80 @@
+import { Link } from "react-router-dom";
 import Header from "../components/Header/Header";
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-
-
 const HomePage = () => {
-  const [animatingImageId, setAnimatingImageId] = useState(null);
-
-  const handleImageClick = (imageId) => {
-    setAnimatingImageId(imageId);
-    setTimeout(() => {
-      setAnimatingImageId(null);
-    }, 300);
-  };
-
-  return (
-    <div className="page-content">
-      {/* --- START OF HERO SECTION --- */}
+    return(
+        <div>
+             <Header/><br />
+        <div className="page-container" style={{ overflow: "auto" }}>
       <div className="hero-section">
-        <div className="hero-content">
-          {/* Top Hindi Text - (Uncomment and add content if needed) */}
-          {/* <p className="hero-text-top-hindi">कुछ हिंदी टेक्स्ट यहाँ</p> */}
-          <div className="college-main-title">
-            {/* Uncomment and add your logo images if available */}
-            {/* <img src="/images/emblem1.png" alt="Emblem 1" className="hero-logo" /> */}
-            <h1>Welcome to Vivekanand College, Kolhapur!</h1>
-            {/* <img src="/images/emlem2.png" alt="Emblem 2" className="hero-logo" /> */}
-          </div>
-          <p className="hero-text-tagline">Your journey to excellence starts here.</p>
-          <Link to="/admissions" className="college-button hero-button">Apply Now!</Link>
-          {/* Accreditation Details - (Uncomment and add content if needed) */}
-          {/* <div className="hero-accreditation-details">
-            <p>NAAC Accredited 'A++' Grade</p>
-            <p>UGC Autonomous College</p>
-          </div> */}
+        <img
+          src="../Images/college-banner.png"
+          alt="Vivekanand College Campus"
+          className="hero-banner-image"
+        />
+        <div className="hero-overlay-text">
+          <h1>Welcome to Vivekanand College!</h1>
+          <p>Your journey to excellence starts here.</p>
+          <Link to="/admission" className="btn hero-btn">
+            Apply Now!
+          </Link>{" "}
         </div>
       </div>
-      {/* --- END OF HERO SECTION --- */}
-
-      <div className="info-card">
-        <h2>About Vivekanand College</h2>
-        <p>Vivekanand College is a premier educational institution committed to academic excellence, innovation, and holistic development. Established in [Year of Establishment, e.g., 1980], our college has consistently served generations of students, empowering them to achieve their full potential.</p>
-        <p>At Vivekanand College, we believe in a vibrant learning environment that extends beyond textbooks. Our state-of-the-art facilities, experienced faculty, and diverse student community create a unique ecosystem where curiosity thrives and future leaders are shaped.</p>
+      <p>
+        <b>Vivekanand College</b> is a premier educational institution dedicated
+        to fostering academic excellence, innovation, and holistic development.
+        Established in 1980, we have proudly served generations of students,
+        empowering them to achieve their full potential.
+      </p>
+      <p>
+        At Vivekanand College, we believe in a vibrant learning environment that
+        extends beyond textbooks. Our state-of-the-art facilities, experienced
+        faculty, and diverse student community create a unique ecosystem where
+        curiosity thrives and future leaders are shaped.
+      </p>
+      <h2>Why Choose Vivekanand College?</h2>
+      <ul>
+        <li>
+          <b>Legacy of Excellence:</b> Decades of commitment to quality
+          education.
+        </li>
+        <li>
+          <b>Experienced Faculty:</b> Learn from renowned experts and passionate
+          educators.
+        </li>
+        <li>
+          <b>Modern Facilities:</b> Well-equipped labs, expansive library, and
+          comfortable campus.
+        </li>
+        <li>
+          <b>Holistic Development:</b> Focus on co-curricular activities,
+          sports, and community service.
+        </li>
+        <li>
+          <b>Strong Placements:</b> Excellent career opportunities with leading
+          companies.
+        </li>
+      </ul>
+      <h2>Campus Life & Facilities</h2>
+      <div className="image-gallery">
+        <img
+          src="/Images/vck campus 1.jpeg"
+          alt="Students studying in library"
+        />
+        <img src="/Images/vck campus.jpeg" alt="Students on campus ground" />
       </div>
-
-      <div className="info-card">
-        <h2>Why Choose Vivekanand College?</h2>
-        <ul>
-          <li><strong>Legacy of Excellence:</strong> Decades of commitment to quality education.</li>
-          <li><strong>Experienced Faculty:</strong> Learn from renowned experts and passionate educators.</li>
-          <li><strong>Modern Facilities:</strong> Well-equipped labs, expansive library, and comfortable campus.</li>
-          <li><strong>Holistic Development:</strong> Focus on co-curricular activities, sports, and community service.</li>
-          <li><strong>Strong Placements:</strong> Excellent career opportunities with leading companies.</li>
-        </ul>
-      </div>
-
-      <div className="info-card">
-        <h2>Campus Life & Facilities</h2>
-        <div className="campus-images-container">
-          <img 
-            src="\Images\vck campus 1.jpeg"
-            alt="Vivekanand College Campus View 1" 
-            className={`campus-feature-image ${animatingImageId === 'image1' ? 'is-animating' : ''}`}
-            onClick={() => handleImageClick('image1')}
-          />
-          <img 
-            src="\Images\vck campus.jpeg"
-            alt="Vivekanand College Campus View 2" 
-            className={`campus-feature-image ${animatingImageId === 'image2' ? 'is-animating' : ''}`}
-            onClick={() => handleImageClick('image2')}
-          />
-        </div>
-        <p style={{ textAlign: 'center', marginTop: '10px' }}>Explore our vibrant campus and state-of-the-art facilities designed to enhance your learning experience and personal growth.</p>
-        
-        {/* Changed to use a class for better styling control and centering */}
-        <div className="explore-courses-section">
-          <p className="explore-courses-text">Ready to explore our courses?</p>
-          <Link to="/courses" className="college-button">Explore Courses</Link>
-        </div>
+      <p>
+        Explore our vibrant campus and state-of-the-art facilities designed to
+        enhance your learning experience and personal growth.
+      </p>
+      <div className="call-to-action">
+        <p>Ready to explore our courses?</p>
+        <Link to="/courses" className="btn">
+          Explore Courses
+        </Link>{" "}
       </div>
     </div>
+    </div>
   );
-};
+}
 
 export default HomePage;
